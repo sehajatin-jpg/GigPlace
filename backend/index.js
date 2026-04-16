@@ -17,7 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: [
+        "http://localhost:5173",
+        "https://gig-place-sigma.vercel.app"
+    ],
     credentials: true
 };
 
